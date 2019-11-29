@@ -1,0 +1,135 @@
+// A program for knowing the day of the date
+// calender program
+
+import java.util.Scanner;
+
+class Calenders {
+
+	public void show() {
+
+		System.out.print("Codes for Year -----> ");
+
+		System.out.println("jan = 0 " + "feb = 3 " +
+
+				"march = 3 " + "april = 6 " + "may = 1 " + "june = 4 " + "july = 6 " + "augst = 2 " + "september = 5 " +
+
+				"oct = 0 " + "nov = 3 " + "dec = 5 ");
+
+		System.out.println();
+
+	}
+
+	public void days() {
+
+		System.out.print("Codes for Days -----> ");
+
+		System.out.println(
+
+				"Sun = 0 " + " Mon = 1 " + "Tue = 2 " + "Wed = 3 " + "Thur = 4 " + "Fri = 5 " + " Sat = 6 "
+
+		);
+
+		System.out.println();
+
+	}
+
+	public void yearcode() {
+
+		System.out.print("Codes for Century -----> ");
+
+		System.out.println("1900 - > 1999 = 0 " + "2000 -> 2099 = 6 ");
+
+	}
+
+}
+
+public class Calendar {
+
+	public static void main(String[] args) {
+
+		Scanner s = new Scanner(System.in);
+
+		int rem;
+
+		int result;
+
+		int ans;
+
+		int data;
+
+		int monthcode;
+
+		int centurycode;
+
+		Calenders c = new Calenders();
+		c.show();
+		c.days();
+		c.yearcode();
+
+		System.out.println("Enter the date");
+
+		int date = s.nextInt();
+
+		System.out.println("Enter the month");
+
+		int month = s.nextInt();
+
+		System.out.println("Enter the Year");
+
+		int year = s.nextInt();
+
+		System.out.println("Enter month code");
+
+		monthcode = s.nextInt();
+
+		System.out.println("Enter the century code");
+
+		centurycode = s.nextInt();
+
+		System.out.println("You Entered data is" + date + "/" + month + "/" + year);
+
+		rem = year % 4;
+
+		result = rem + date + monthcode + centurycode;
+
+		ans = result % 7;
+
+		switch (ans) {
+
+		case 1:
+			System.out.println("Sundday");
+			break;
+
+		case 2:
+			System.out.println("monday");
+			break;
+
+		case 3:
+			System.out.println("Tuesday");
+			break;
+
+		case 4:
+			System.out.println("Wednesday");
+			break;
+
+		case 5:
+			System.out.println("Thursday");
+			break;
+
+		case 6:
+			System.out.println("Friday");
+			break;
+
+		case 7:
+			System.out.println("Saturday");
+			break;
+
+		default:
+			System.out.println("Invalid");
+			break;
+
+		}
+
+	}
+
+}
